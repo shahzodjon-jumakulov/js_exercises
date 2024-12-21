@@ -10,7 +10,7 @@ const {
 const {expect} = require("chai");
 
 describe('Exercise @1', () => {
-  describe.only('isStringEmpty Function', () => {
+  describe('isStringEmpty Function', () => {
     it('isStringEmpty(\'abc\'); => false', () => {
       expect(isStringEmpty('abc')).to.equal(false);
     });
@@ -30,21 +30,31 @@ describe('Exercise @1', () => {
     });
   });
 
-  describe('truncateString Function', () => {
+  describe.only('truncateString Function', () => {
     it('truncateString(\'Hello World\', 2); => \'He\'', () => {
       expect(truncateString('Hello World', 2)).to.equal('He');
     });
 
     it('truncateString(\'Hello world\'); => throws error "Please specify number of characters to extract"', () => {
       expect(() => {
-        truncateString();
+        truncateString('Hello world');
       }).to.throw('Please specify number of characters to extract');
     });
 
-    it('truncateString(\'\'); => throws error "text must have at least one character"', () => {
+    it('truncateString(\'\'); => throws error "Text must have at least one character"', () => {
       expect(() => {
-        truncateString();
-      }).to.throw('text must have at least one character');
+        truncateString('');
+      }).to.throw('Text must have at least one character');
+    });
+
+    it('truncateString(\'Hello World\', -1); => throws error "Number of characters must be a non-negative integer"', () => {
+      expect(() => {
+        truncateString('Hello World', -1);
+      }).to.throw('Number of characters must be a non-negative integer');
+    });
+
+    it('truncateString(\'Hello World\', 50); => \'Hello World\'', () => {
+      expect(truncateString('Hello World', 50)).to.equal('Hello World');
     });
   });
 
