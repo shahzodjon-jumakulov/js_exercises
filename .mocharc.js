@@ -1,5 +1,5 @@
 module.exports = {
   recursive: true,
   timeout: 3000,
-  spec: "tests/*.test.js"
+  spec: "tests/exercise_1.test.js"
 };

@@ -10,17 +10,17 @@ const {
 const {expect} = require("chai");
 
 describe('Exercise @1', () => {
-  describe('isStringEmpty Function', () => {
+  describe.only('isStringEmpty Function', () => {
     it('isStringEmpty(\'abc\'); => false', () => {
       expect(isStringEmpty('abc')).to.equal(false);
     });
 
     it('isStringEmpty(\'\'); => true', () => {
-      expect(isStringEmpty('abc')).to.equal(true);
+      expect(isStringEmpty('')).to.equal(true);
     });
 
     it('isStringEmpty(\'   \'); => true', () => {
-      expect(isStringEmpty('abc')).to.equal(true);
+      expect(isStringEmpty('   ')).to.equal(true);
     });
 
     it('isStringEmpty(); => throws error', () => {

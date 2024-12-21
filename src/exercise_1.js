@@ -9,7 +9,8 @@
  * isStringEmpty(); => throws error "text must be defined"
  */
 function isStringEmpty(text) {
-  // Your code here
+  if (text === undefined) throw new Error("text must be defined");
+  return text.trim().length === 0;
 }
 
 /**
