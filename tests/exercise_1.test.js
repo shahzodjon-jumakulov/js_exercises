@@ -30,7 +30,7 @@ describe('Exercise @1', () => {
     });
   });
 
-  describe.only('truncateString Function', () => {
+  describe('truncateString Function', () => {
     it('truncateString(\'Hello World\', 2); => \'He\'', () => {
       expect(truncateString('Hello World', 2)).to.equal('He');
     });
@@ -58,13 +58,13 @@ describe('Exercise @1', () => {
     });
   });
 
-  describe('createHashTag Function', () => {
+  describe.only('createHashTag Function', () => {
     it("createHashTag('Hello World'); => '#helloWorld'", () => {
       expect(createHashTag('Hello World')).to.equal('#helloWorld');
     });
 
     it("createHashTag('i love javascript'); => '#iLoveJavascript'", () => {
-      expect(createHashTag('Hello World')).to.equal('#iLoveJavascript');
+      expect(createHashTag('i love javascript')).to.equal('#iLoveJavascript');
     });
 
     it("createHashTag(''); => throws error 'Text should have at least three characters'", () => {
