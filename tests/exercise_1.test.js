@@ -86,7 +86,7 @@ describe('Exercise @1', () => {
     });
   });
 
-  describe.only('formatPhoneNumber Function', () => {
+  describe('formatPhoneNumber Function', () => {
     it("formatPhoneNumber(998997776655); => '+998 99 777 66 55'", () => {
       expect(formatPhoneNumber(998997776655)).to.equal('+998 99 777 66 55');
     });
@@ -114,7 +114,7 @@ describe('Exercise @1', () => {
     });
   });
 
-  describe('changeTextCase Function', () => {
+  describe.only('changeTextCase Function', () => {
     it("changeTextCase('Hello World', 'camel'); => 'helloWorld'", () => {
       expect(changeTextCase('Hello World', 'camel')).to.equal('helloWorld');
     });
@@ -125,6 +125,12 @@ describe('Exercise @1', () => {
 
     it("changeTextCase('Hello World', 'snake'); => 'hello_world'", () => {
       expect(changeTextCase('Hello World', 'snake')).to.equal('hello_world');
+    });
+
+    it("changeTextCase('Hello World', 'CAMEL'); => throws error 'Invalid case name provided'", () => {
+      expect(() => {
+        changeTextCase('Hello World', 'CAMEL');
+      }).to.throw('Invalid case name provided');
     });
   });
 

@@ -115,10 +115,24 @@ function formatPhoneNumber(phoneNumber) {
  * changeTextCase('Hello World', 'camel'); => 'helloWorld'
  * changeTextCase('Hello World', 'kebab'); => 'hello-world'
  * changeTextCase('Hello World', 'snake'); => 'hello_world'
- *
+ * changeTextCase('Hello World', 'CAMEL'); => throws error "Invalid case name provided"
  */
 function changeTextCase(text, caseName) {
-  // Your code here
+  const words = text.split(" ");
+
+  switch (caseName) {
+    case "camel":
+      return words.map((word, index) => {
+        if (index === 0) return word.toLowerCase();
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+      }).join("");
+    case "kebab":
+      return words.map((word) => word.toLowerCase()).join("-");
+    case "snake":
+      return words.map((word) => word.toLowerCase()).join("_");
+    default:
+      throw new Error("Invalid case name provided");
+  }
 }
 
 /**
