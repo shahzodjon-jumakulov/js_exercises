@@ -8,7 +8,7 @@ const {
 } = require('../src/exercise_2');
 
 describe('Exercise @2', () => {
-  describe.only('countMatchsticksInHouses Function', () => {
+  describe('countMatchsticksInHouses Function', () => {
     it('countMatchsticksInHouses(1) => 6 ', () => {
       const result = countMatchsticksInHouses(1);
       expect(result).to.equal(6);
@@ -30,7 +30,7 @@ describe('Exercise @2', () => {
     });
   });
 
-  describe('Time Regex', () => {
+  describe.only('Time Regex', () => {
     it('should return 09:00', () => {
       const text = 'Breakfast at 09:00 in the room 123:456.';
       const result = text.match(TIME_REGEX)[0];
