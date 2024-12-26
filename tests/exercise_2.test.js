@@ -30,7 +30,7 @@ describe('Exercise @2', () => {
     });
   });
 
-  describe.only('Time Regex', () => {
+  describe('Time Regex', () => {
     it('should return 09:00', () => {
       const text = 'Breakfast at 09:00 in the room 123:456.';
       const result = text.match(TIME_REGEX)[0];
@@ -44,7 +44,7 @@ describe('Exercise @2', () => {
     });
   });
 
-  describe('findSecretWord Function', () => {
+  describe.only('findSecretWord Function', () => {
     it('should find "cat"', () => {
       const text = "UcUNFYGaFYFYGtNUH";
       const result = findSecretWord(text);
@@ -61,6 +61,12 @@ describe('Exercise @2', () => {
       const text = "YFemHUFBbezFBYzFBYLleGBYEFGBMENTment";
       const result = findSecretWord(text);
       expect(result).equals('embezzlement');
+    });
+
+    it('throws error "No secret word found"', () => {
+      const text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      const result = () => findSecretWord(text);
+      expect(result).to.throw('No secret word found');      
     });
   });
 

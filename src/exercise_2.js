@@ -30,12 +30,15 @@ const TIME_REGEX = /\b\d{2}:\d{2}\b/ /* Write your regex here */
  * The wanted word is in lowercase.
  * The crowd of letters is all in uppercase.
  * Note that the word will be spread out amongst the random letters, but their letters remain in the same order.
- * findSecretWord("UcUNFYGaFYFYGtNUH") ➞ "cat"
+ * findSecretWord("UUNFYGFYFYGNUH") ➞ "cat"
  * findSecretWord("bEEFGBuFBRrHgUHlNFYaYr") ➞ "burglar"
  * findSecretWord("YFemHUFBbezFBYzFBYLleGBYEFGBMENTment") ➞ "embezzlement"
+ * findSecretWord("ABCDEFGHIJKLMNOPQRSTUVWXYZ") ➞ "No secret word found"
  * */
 function findSecretWord(text) {
-  // Write your code here
+  const secretWord = text.match(/[a-z]/g) || [];
+  if (secretWord.length === 0) throw new Error("No secret word found");
+  return secretWord.join("");
 }
 
 /**
