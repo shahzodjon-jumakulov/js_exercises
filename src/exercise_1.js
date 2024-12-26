@@ -26,9 +26,12 @@ function isStringEmpty(text) {
  * truncateString('Hello World', 50); => 'Hello World'
  */
 function truncateString(text, numberOfCharacters) {
+  // Ensure text is provided and has at least one character
   if (text.trim().length === 0) {
     throw new Error("Text must have at least one character");
   }
+  
+  // Ensure numberOfCharacters is provided and is a non-negative integer
   if (numberOfCharacters === undefined) {
     throw new Error("Please specify number of characters to extract");
   }
@@ -36,6 +39,7 @@ function truncateString(text, numberOfCharacters) {
     throw new Error("Number of characters must be a non-negative integer");
   }
 
+  // Return the truncated text
   return text.slice(0, numberOfCharacters);
 }
 
@@ -51,14 +55,19 @@ function truncateString(text, numberOfCharacters) {
  * createHashTag('   '); => throws error "Text should have at least three characters"
  */
 function createHashTag(text) {
+  // Ensure text is provided and has at least three characters
   if (text === undefined || text.trim().length < 3) {
     throw new Error("Text should have at least three characters");
   }
+  
   const words = text.trim().split(" ");
+
+  // Lowercase the first word and capitalize the rest
   const capitalizedWords = words.map((word, index) => {
     if (index === 0) return word.toLowerCase();
     return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
   });
+
   return "#" + capitalizedWords.join("");
 }
 
