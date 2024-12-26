@@ -70,7 +70,7 @@ describe('Exercise @2', () => {
     });
   });
 
-  describe.only('Person class', () => {
+  describe('Person class', () => {
     const p1 = new Person("Samuel", 24);
     const p2 = new Person("Joel", 36)
     const p3 = new Person("Lily", 24)

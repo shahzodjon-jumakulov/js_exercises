@@ -96,7 +96,7 @@ class Person {
  * f3() ➞ ""
  * */
 function redundant(str) {
-  // Write your code here
+  return () => str;
 }
 
 module.exports = {
