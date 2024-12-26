@@ -58,7 +58,7 @@ describe('Exercise @1', () => {
     });
   });
 
-  describe.only('createHashTag Function', () => {
+  describe('createHashTag Function', () => {
     it("createHashTag('Hello World'); => '#helloWorld'", () => {
       expect(createHashTag('Hello World')).to.equal('#helloWorld');
     });
@@ -86,7 +86,7 @@ describe('Exercise @1', () => {
     });
   });
 
-  describe('formatPhoneNumber Function', () => {
+  describe.only('formatPhoneNumber Function', () => {
     it("formatPhoneNumber(998997776655); => '+998 99 777 66 55'", () => {
       expect(formatPhoneNumber(998997776655)).to.equal('+998 99 777 66 55');
     });

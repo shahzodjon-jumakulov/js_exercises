@@ -75,7 +75,26 @@ function createHashTag(text) {
  * formatPhoneNumber(); => throws error "Phone number must be either 9 or 12 characters long"
  */
 function formatPhoneNumber(phoneNumber) {
-  // Your code here
+  const errorMsg = "Phone number must be either 9 or 12 characters long";
+
+  // Ensure phoneNumber is provided and is a number
+  if (phoneNumber === undefined) throw new Error(errorMsg);
+
+  // Convert phoneNumber to string and check its length
+  const phoneNumberString = phoneNumber.toString();
+  if (phoneNumberString.length !== 9 && phoneNumberString.length !== 12) {
+    throw new Error(errorMsg);
+  }
+
+  // Define the parts of the phone number
+  const countryCode = "+998";
+  const lastTwoDigits = phoneNumberString.slice(-2);
+  const middleTwoDigits = phoneNumberString.slice(-4, -2);
+  const firstThreeDigits = phoneNumberString.slice(-7, -4);
+  const companyCode = phoneNumberString.slice(-9, -7);
+
+  // Return the formatted phone number
+  return `${countryCode} ${companyCode} ${firstThreeDigits} ${middleTwoDigits} ${lastTwoDigits}`;
 }
 
 /**
