@@ -114,7 +114,7 @@ describe('Exercise @1', () => {
     });
   });
 
-  describe.only('changeTextCase Function', () => {
+  describe('changeTextCase Function', () => {
     it("changeTextCase('Hello World', 'camel'); => 'helloWorld'", () => {
       expect(changeTextCase('Hello World', 'camel')).to.equal('helloWorld');
     });
@@ -134,7 +134,7 @@ describe('Exercise @1', () => {
     });
   });
 
-  describe('replaceWordInText Function', () => {
+  describe.only('replaceWordInText Function', () => {
     const bigText = 'Winnie-the-Pooh (also known as Edward Bear, Pooh Bear or simply Pooh) ' +
       'is a fictional anthropomorphic teddy bear created by English author A. A. Milne and English ' +
       'illustrator E. H. Shepard. Winnie-the-Pooh first appeared by name in a children\'s story ' +

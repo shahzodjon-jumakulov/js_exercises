@@ -149,7 +149,11 @@ function changeTextCase(text, caseName) {
  * 'Winnie-the-Puff (also known as Edward Bear, Puff Bear or simply Puff) is a fictional anthropomorphic teddy bear created by English author A. A. Milne and English illustrator E. H. Shepard. Winnie-the-Puff first appeared by name in a children's story commissioned by London's Evening News for Christmas Eve 1925. The character is inspired by a stuffed toy that Milne had bought for his son Christopher Robin in Harrods department store, and a bear they had viewed at London Zoo.'
  */
 function replaceWordInText(text, word, replacement) {
-  // Your code here
+  // split-join - better performance for shorter texts
+  // return text.split(word).join(replacement);
+
+  // regex - better performance for longer texts and more complex patterns
+  return text.replace(new RegExp(word, "g"), replacement);
 }
 
 /**
