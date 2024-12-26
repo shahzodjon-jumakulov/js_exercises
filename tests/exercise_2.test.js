@@ -44,7 +44,7 @@ describe('Exercise @2', () => {
     });
   });
 
-  describe.only('findSecretWord Function', () => {
+  describe('findSecretWord Function', () => {
     it('should find "cat"', () => {
       const text = "UcUNFYGaFYFYGtNUH";
       const result = findSecretWord(text);
@@ -70,8 +70,8 @@ describe('Exercise @2', () => {
     });
   });
 
-  describe('Person class', () => {
-    const p1 = new Person("Samuel", 23);
+  describe.only('Person class', () => {
+    const p1 = new Person("Samuel", 24);
     const p2 = new Person("Joel", 36)
     const p3 = new Person("Lily", 24)
 
@@ -86,7 +86,7 @@ describe('Exercise @2', () => {
     });
 
     it('Lily is the same age as me.', () => {
-      const result = p2.compareAge(p3);
+      const result = p1.compareAge(p3);
       expect(result).to.equal('Lily is the same age as me.');
     });
   });
