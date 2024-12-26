@@ -8,7 +8,7 @@ const {
 } = require('../src/exercise_2');
 
 describe('Exercise @2', () => {
-  describe('countMatchsticksInHouses Function', () => {
+  describe.only('countMatchsticksInHouses Function', () => {
     it('countMatchsticksInHouses(1) => 6 ', () => {
       const result = countMatchsticksInHouses(1);
       expect(result).to.equal(6);

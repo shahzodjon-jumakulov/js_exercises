@@ -10,7 +10,9 @@
  * See image here: https://edabit-challenges.s3.amazonaws.com/matchstick_houses.png
  * */
 function countMatchsticksInHouses(step) {
-  // Write your code here
+  if (step === 0) return 0;
+  return 6 + (step - 1) * 5;
+  // return step === 0 ? 0 : 6 + (step - 1) * 5;
 }
 
  /* The time has a format: hours:minutes. Both hours and minutes have two digits, like 09:00. */
