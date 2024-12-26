@@ -15,12 +15,12 @@ describe('Exercise @1', () => {
       expect(isStringEmpty('abc')).to.equal(false);
     });
 
-    it('isStringEmpty(\'\'); => true', () => {
+    it('isStringEmpty(""); => true', () => {
       expect(isStringEmpty('')).to.equal(true);
     });
 
-    it('isStringEmpty(\'   \'); => true', () => {
-      expect(isStringEmpty('   ')).to.equal(true);
+    it('isStringEmpty("   "); => true', () => {
+      expect(isStringEmpty('  ')).to.equal(true);
     });
 
     it('isStringEmpty(); => throws error', () => {
