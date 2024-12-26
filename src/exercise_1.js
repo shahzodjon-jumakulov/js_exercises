@@ -166,7 +166,10 @@ function replaceWordInText(text, word, replacement) {
  * extractPriceFromText('There were no apples left in the shop'); => 'No matching price was found'
  */
 function extractPriceFromText(text) {
-  // Your code here
+  const price = text.match(/\$\d+(\.\d+)?/);
+  
+  // Return first matched price if found, otherwise return a message
+  return price ? parseFloat(price[0].slice(1)) : "No matching price was found";
 }
 
 module.exports = {
